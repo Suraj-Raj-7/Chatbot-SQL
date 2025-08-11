@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with MySQL</title>
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar for database connection -->
+        <div class="sidebar">
+            <h2 class="sidebar-title">Settings</h2>
+            <div class="connection-section">
+                <button id="connect-button">Connect to Database</button>
+                <div id="connection-status">Not Connected</div>
+            </div>
+        </div>
+        
+        <!-- Main chat window -->
+        <div class="chat-window">
+            <div class="chat-header">
+                <h3>AI-Powered SQL Assistant</h3>
+            </div>
+            <div class="chat-history" id="chat-history">
+                <div class="message assistant">
+                    Hello! I'm a SQL assistant. Ask me anything about your database.
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+    <!-- Link to the external JavaScript file -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
