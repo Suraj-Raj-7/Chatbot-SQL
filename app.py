@@ -89,7 +89,14 @@ def get_sql_query_result(vars):
     """
     query = vars["query"]
     print("Generated SQL Query:", query)
-    return db.run(query)
+    
+    try:
+        db_response = db.run(query)
+        print("SQL Response:", db_response)
+        return db_response
+    except Exception as e:
+        print(f"Error executing SQL query: {e}")
+        return f"Error executing SQL query: {e}"
 
 # Get the response from the SQL query
 def get_response_chain(db, gemini_api_key):
