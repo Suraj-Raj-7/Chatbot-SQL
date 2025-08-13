@@ -2,9 +2,7 @@
 
 A conversational AI-powered chatbot that allows you to interact with a MySQL database using natural language. This project leverages the power of Google's Gemini 1.5 Flash model through LangChain to translate your questions into SQL queries, fetch the results, and provide answers in a human-friendly format.
 
-![Chatbot Interface Screenshot](https://placehold.co/800x400/1e1e1e/e0e0e0?text=Chatbot+UI+Screenshot)
 
----
 
 ## ✨ Features
 
