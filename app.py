@@ -90,6 +90,19 @@ def get_sql_query_result(vars):
     query = vars["query"]
     print("Generated SQL Query:", query)
     
+    # A list of SQL keywords that are not allowed so that the assistant can only perform read-only queries
+    # This is a basic check and can be extended for more complex validation
+    forbidden_keywords = [
+        "INSERT", "UPDATE", "DELETE", "DROP", "CREATE", 
+        "ALTER", "TRUNCATE", "GRANT", "REVOKE"
+    ]
+
+    # Check if any forbidden keyword is in the query (case-insensitive)
+    if any(keyword in query.upper() for keyword in forbidden_keywords):
+        error_message = "Sorry, I can only perform read-only queries. I cannot modify the database."
+        print(error_message)
+        return error_message
+    
     try:
         db_response = db.run(query)
         print("SQL Response:", db_response)
