@@ -70,7 +70,7 @@ def get_sql_chain(db, gemini_api_key):
     prompt = ChatPromptTemplate.from_template(template)
     
     # Initialize the Gemini LLM with the working model
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0, google_api_key=gemini_api_key)
+    llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0, google_api_key=gemini_api_key)
     
     def get_schema(_):
         return db.get_table_info()
@@ -129,7 +129,7 @@ def get_response_chain(db, gemini_api_key):
     prompt = ChatPromptTemplate.from_template(template)
     
     # Initialize the Gemini LLM with the working model
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0, google_api_key=gemini_api_key)
+    llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0, google_api_key=gemini_api_key)
     
     chain = (
         RunnablePassthrough.assign(query=sql_chain).assign(

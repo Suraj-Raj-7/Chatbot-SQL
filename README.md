@@ -59,3 +59,4 @@ The application follows a simple but powerful architecture to process user reque
 
 ---
 
+# activate venv    .\venv\Scripts\activate
